@@ -10,7 +10,7 @@ export const Home = () => {
         <Hero />
         <div id='recomendados' className='p-6'>
           <p className='text-3xl font-semibold text-primary'>Recomendados</p>
-          <div className=' w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-4'>
+          <div className=' w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-4 overflow-y-hidden'>
             <TravelCard backgroundImage='bg-norway'>
               <TravelCard.Body>
                 <TravelCard.Title title='Norway' />
