@@ -1,5 +1,5 @@
 import { Hero } from 'components/Hero';
-import { TravelCard } from '../components/TravelCard';
+import { TravelCard } from 'components/TravelCard';
 
 export const Home = () => {
   console.log('entre');
