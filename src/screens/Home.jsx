@@ -1,4 +1,5 @@
-import { Hero } from "components/Hero";
+import { Hero } from 'components/Hero';
+import { TravelCard } from '../components/TravelCard';
 
 export const Home = () => {
   console.log('entre');
@@ -8,7 +9,9 @@ export const Home = () => {
       <div id='tab_bar'></div>
       <section className='w-full h-screen'>
         <Hero />
-        <div id='recomendadas'></div>
+        <div id='recomendadas' className='p-20'>
+          <TravelCard title='Norway' description='Paisajes Increíbles' backgroundImage='norway' />
+        </div>
         <div id='rentas_destacadas'></div>
       </section>
       <footer></footer>
