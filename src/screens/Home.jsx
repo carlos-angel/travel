@@ -42,7 +42,33 @@ export const Home = () => {
             </TravelCard>
           </div>
         </div>
-        <div id='rentas_destacadas'></div>
+        <div id='rentas_destacadas' className='px-6 w-full h-auto pb-6'>
+          <p className='text-3xl text-primary font-semibold pb-6 mt-2'>Rentas Destacadas</p>
+          <div className='w-full h-full flex flex-col space-y-4 items-center justify-center'>
+            <TravelCard className='w-full h-96 bg-chicago bg-cover rounded-xl'>
+              <TravelCard.Title title='Chicago' className='cardTitle' />
+              <TravelCard.Description
+                description='2 habitaciones, 1 baño y cocina.'
+                className='text-sm pl-8 text-white font-extrabold mr-24'
+              />
+            </TravelCard>
+            <TravelCard className='w-full h-96 bg-miami bg-cover rounded-xl'>
+              <TravelCard.Title title='Miami' className='cardTitle' />
+              <TravelCard.Description
+                description='2 habitaciones, 1 baño y cocina.'
+                className='text-sm pl-8 text-white font-extrabold mr-24'
+              />
+            </TravelCard>
+
+            <TravelCard className='w-full h-96 bg-bali bg-cover rounded-xl'>
+              <TravelCard.Title title='Bali' className='cardTitle' />
+              <TravelCard.Description
+                description='2 habitaciones, 1 baño y cocina.'
+                className='text-sm pl-8 text-white font-extrabold mr-24'
+              />
+            </TravelCard>
+          </div>
+        </div>
       </section>
       <footer></footer>
     </>
