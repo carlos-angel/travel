@@ -1,5 +1,6 @@
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
+import { FrequentQuestions } from '../components/FrequentQuestions';
 
 export const Home = () => {
   return (
@@ -69,6 +70,31 @@ export const Home = () => {
             </TravelCard>
           </div>
         </div>
+        <FrequentQuestions>
+          <FrequentQuestions.FQA
+            title='Política de Cancelación'
+            description='Para estancias menores a una semana es importante avisar con 3 días de anticipación,
+                de caso contrarío será sancionado.'
+          />
+          <FrequentQuestions.FQA
+            title='Métodos de pago'
+            description='Aceptamos distintos métodos de pago: VISA, MasterCard, American Express, Paypal y
+                Binance'
+          />
+          <FrequentQuestions.FQA
+            title='Mascotas'
+            description='El tema de las mascotas dependerá directamente del anfitrión.'
+          />
+          <FrequentQuestions.FQA
+            title='Información de Seguridad'
+            description='Todas nuestras estancias cuentan con seguro en caso de accidentes'
+          />
+          <FrequentQuestions.FQA
+            title='Estancias Largas'
+            description='Contamos con estancias de hasta 3 meses, en este caso es requerido un anticipo con
+            un monto del 50% del valor de la renta'
+          />
+        </FrequentQuestions>
       </section>
       <footer></footer>
     </>
