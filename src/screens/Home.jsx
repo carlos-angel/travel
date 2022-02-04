@@ -2,12 +2,12 @@ import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
 import { Footer } from '../components/Footer';
 import { FrequentQuestions } from '../components/FrequentQuestions';
+import { TabBar } from '../components/TabBar';
 
 export const Home = () => {
   return (
     <main className='h-screen'>
       <nav></nav>
-      <div id='tab_bar'></div>
       <section className='w-full pb-6'>
         <Hero />
         <div id='recomendados' className='p-6'>
@@ -105,6 +105,27 @@ export const Home = () => {
           <Footer.About.Info className='text-sm text-gray-300' paragraph='Travel, Inc.' />
         </Footer.About>
       </Footer>
+      <TabBar>
+        <TabBar.Link href='#home'>
+          <TabBar.HomeIcon width={30} height={30} className='fill-current text-gray-200' />
+        </TabBar.Link>
+
+        <TabBar.Link href='#recomendados'>
+          <TabBar.SearchIcon width={30} height={30} className='fill-current text-gray-200' />
+        </TabBar.Link>
+
+        <TabBar.Link href='#rentas_destacadas'>
+          <TabBar.HeartIcon width={30} height={30} className='fill-current text-primary' />
+        </TabBar.Link>
+
+        <TabBar.Link href='#'>
+          <TabBar.UserIcon width={30} height={30} className='fill-current text-gray-200' />
+        </TabBar.Link>
+
+        <TabBar.Link href='#'>
+          <TabBar.MoonIcon width={30} height={30} className='fill-current text-gray-200' />
+        </TabBar.Link>
+      </TabBar>
     </main>
   );
 };

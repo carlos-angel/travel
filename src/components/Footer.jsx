@@ -1,5 +1,5 @@
 export const Footer = ({ children }) => {
-  return <footer className='w-full h-auto bg-gray-50'>{children}</footer>;
+  return <footer className='w-full h-auto bg-gray-50 mb-16'>{children}</footer>;
 };
 
 const About = ({ children, title }) => (
