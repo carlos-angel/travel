@@ -44,31 +44,44 @@ export const Home = () => {
             </TravelCard>
           </div>
         </div>
-        <div id='rentas_destacadas' className='px-6 w-full h-auto pb-6'>
+        <div id='rentas_destacadas' className='px-6 w-full h-auto pb-6 lg:px-6'>
           <p className='text-3xl text-primary font-semibold pb-6 mt-2'>Rentas Destacadas</p>
-          <div className='w-full h-full flex flex-col space-y-4 items-center justify-center'>
-            <TravelCard className='w-full h-96 bg-chicago bg-cover rounded-xl'>
-              <TravelCard.Title title='Chicago' className='cardTitle' />
+          <div className='w-full h-full flex flex-col items-center justify-center'>
+            <TravelCard className='w-full h-96 bg-chicago bg-cover rounded-xl mb-8 lg:bg-center'>
+              <TravelCard.Title title='Chicago' className='cardTitle lg:text-gray-700' />
               <TravelCard.Description
                 description='2 habitaciones, 1 baño y cocina.'
-                className='text-sm pl-8 text-white font-extrabold mr-24'
-              />
-            </TravelCard>
-            <TravelCard className='w-full h-96 bg-miami bg-cover rounded-xl'>
-              <TravelCard.Title title='Miami' className='cardTitle' />
-              <TravelCard.Description
-                description='2 habitaciones, 1 baño y cocina.'
-                className='text-sm pl-8 text-white font-extrabold mr-24'
+                className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold lg:text-gray-700'
               />
             </TravelCard>
 
-            <TravelCard className='w-full h-96 bg-bali bg-cover rounded-xl'>
-              <TravelCard.Title title='Bali' className='cardTitle' />
-              <TravelCard.Description
-                description='2 habitaciones, 1 baño y cocina.'
-                className='text-sm pl-8 text-white font-extrabold mr-24'
-              />
-            </TravelCard>
+            <div className='lg:flex lg:h-full lg:w-full lg:space-x-4'>
+              <TravelCard className='w-full h-96 bg-LA bg-cover rounded-xl mb-8 lg:h-auto'>
+                <TravelCard.Title title='Los Angeles' className='cardTitle' />
+                <TravelCard.Description
+                  description='2 habitaciones, 1 baño y cocina.'
+                  className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold'
+                />
+              </TravelCard>
+
+              <div className='h-full w-full'>
+                <TravelCard className='w-full h-96 bg-miami bg-cover rounded-xl mb-8'>
+                  <TravelCard.Title title='Miami' className='cardTitle' />
+                  <TravelCard.Description
+                    description='2 habitaciones, 1 baño y cocina.'
+                    className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold'
+                  />
+                </TravelCard>
+
+                <TravelCard className='w-full h-96 bg-bali bg-cover rounded-xl mb-8'>
+                  <TravelCard.Title title='Bali' className='cardTitle' />
+                  <TravelCard.Description
+                    description='2 habitaciones, 1 baño y cocina.'
+                    className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold'
+                  />
+                </TravelCard>
+              </div>
+            </div>
           </div>
         </div>
         <FrequentQuestions>
