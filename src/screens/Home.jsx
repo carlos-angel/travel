@@ -1,13 +1,14 @@
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
+import { Footer } from '../components/Footer';
 import { FrequentQuestions } from '../components/FrequentQuestions';
 
 export const Home = () => {
   return (
-    <>
+    <main className='h-screen'>
       <nav></nav>
       <div id='tab_bar'></div>
-      <section className='w-full h-screen'>
+      <section className='w-full pb-6'>
         <Hero />
         <div id='recomendados' className='p-6'>
           <p className='text-3xl font-semibold text-primary'>Recomendados</p>
@@ -96,7 +97,14 @@ export const Home = () => {
           />
         </FrequentQuestions>
       </section>
-      <footer></footer>
-    </>
+      <Footer>
+        <Footer.About title='Acerca De'>
+          <Footer.About.Info className='text-sm text-gray-300' paragraph='Inversionistas' />
+          <Footer.About.Info className='text-sm text-gray-300' paragraph='Empleos' />
+          <Footer.About.Info className='text-sm text-gray-300' paragraph='Términos y condiciones' />
+          <Footer.About.Info className='text-sm text-gray-300' paragraph='Travel, Inc.' />
+        </Footer.About>
+      </Footer>
+    </main>
   );
 };
