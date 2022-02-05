@@ -11,6 +11,7 @@ export default defineConfig({
       screens: resolve('src/screens/'),
       assets: resolve('src/assets/'),
       content: resolve('src/content/'),
+      context: resolve('src/context/'),
     },
   },
 });

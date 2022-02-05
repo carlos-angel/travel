@@ -1,3 +1,4 @@
+import { useContext } from 'react';
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
 import { Footer } from 'components/Footer';
@@ -6,34 +7,54 @@ import { Navbar } from 'components/Navbar';
 import { TabBar } from 'components/TabBar';
 import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from 'components/icons';
 import travels from 'content/travels';
+import { ThemeContext } from 'context/ThemeContext';
+
 export const Home = () => {
+  const { theme, setTheme } = useContext(ThemeContext);
+  const isDark = theme === 'dark';
+
   return (
     <>
       <Navbar>
         <Navbar.Logo>
-          <p className='font-black text-primary'>Travel</p>
+          <p className='font-black text-primary dark:text-gray-300'>Travel</p>
         </Navbar.Logo>
         <Navbar.Links>
-          <a className='font-bold text-primary hover:underline' href='#home'>
+          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
             Inicio
           </a>
-          <a className='font-bold text-primary hover:underline' href='#home'>
+          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
             Recomendados
           </a>
-          <a className='font-bold text-primary hover:underline' href='#home'>
+          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
             Rentas
           </a>
-          <a className='font-bold text-primary hover:underline' href='#home'>
+          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
             FAQS
           </a>
-          <a className='font-bold text-primary hover:underline' href='#home'>
+          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
             Acerca De
           </a>
         </Navbar.Links>
         <Navbar.BoxIcons>
-          <SearchIcon width={22} height={22} className='fill-current text-primary' />
-          <MoonIcon width={22} height={22} className='fill-current text-primary' />
-          <UserIcon width={22} height={22} className='text-gray-200 fill-current' />
+          <SearchIcon
+            width={22}
+            height={22}
+            className='fill-current text-primary dark:text-gray-300'
+          />
+
+          <MoonIcon
+            onClick={() => setTheme(isDark ? 'light' : 'dark')}
+            width={22}
+            height={22}
+            className='cursor-pointer fill-current text-primary dark:text-gray-300'
+          />
+
+          <UserIcon
+            width={22}
+            height={22}
+            className='text-gray-200 fill-current dark:text-gray-300'
+          />
         </Navbar.BoxIcons>
       </Navbar>
       <Hero>
@@ -42,18 +63,32 @@ export const Home = () => {
         <Hero.ButtonExplore title='Explorar' />
       </Hero>
 
-      <div class='w-full h-auto lg:px-2'>
-        <section id='recomendados' className='p-6'>
-          <p className='text-3xl font-semibold text-primary'>Recomendados</p>
-          <div className='flex items-center w-auto mt-6 space-x-4 overflow-x-auto h-96 overscroll-x-contain lg:space-x-6 scrollbar'>
+      <div className='w-full h-auto'>
+        <section id='recomendados' className='w-full h-auto'>
+          <p className='pt-6 pl-6 text-3xl font-semibold text-primary dark:text-gray-300'>
+            Recomendados
+          </p>
+          <div className='flex items-center w-auto px-6 mt-6 space-x-4 overflow-x-auto h-96 overscroll-x-contain lg:space-x-6 scrollbar'>
             {travels.map(({ title, description, bg }, index) => {
-              const isCardImpar = (index +1) % 2 === 0;
+              const isCardImpar = (index + 1) % 2 === 0;
               return (
                 <TravelCard key={index}>
                   <TravelCard.HeaderImage backgroundImage={bg} />
-                  <TravelCard.Body className={isCardImpar ? 'bg-white' : null}>
-                    <TravelCard.Title title={title} className={isCardImpar ? 'pt-2 text-xl font-bold text-sky-400' : null} />
-                    <TravelCard.Description description={description} className={isCardImpar ? 'text-sm text-sky-400' : null} />
+                  <TravelCard.Body
+                    className={isCardImpar ? 'bg-white dark:bg-gray-800 rounded-b-lg' : null}
+                  >
+                    <TravelCard.Title
+                      title={title}
+                      className={
+                        isCardImpar
+                          ? 'pt-2 text-xl font-bold text-sky-400 dark:text-gray-300'
+                          : null
+                      }
+                    />
+                    <TravelCard.Description
+                      description={description}
+                      className={isCardImpar ? 'text-sm text-sky-400 dark:text-gray-300' : null}
+                    />
                   </TravelCard.Body>
                 </TravelCard>
               );
@@ -62,7 +97,9 @@ export const Home = () => {
         </section>
 
         <section id='rentas_destacadas' className='h-full px-6 lg:px-14'>
-          <p className='pb-6 text-3xl font-semibold text-primary'>Rentas Destacadas</p>
+          <p className='pb-6 text-3xl font-semibold text-primary dark:text-gray-300'>
+            Rentas Destacadas
+          </p>
           <div className='flex flex-col items-center justify-center w-full h-full'>
             <TravelCard className='w-full mb-8 bg-cover h-96 bg-chicago rounded-2xl lg:flex-none lg:bg-center'>
               <TravelCard.Title title='Chicago' className='cardTitle lg:text-gray-700' />
@@ -159,7 +196,12 @@ export const Home = () => {
         </TabBar.Link>
 
         <TabBar.Link href='#'>
-          <MoonIcon width={30} height={30} className='text-gray-200 fill-current' />
+          <MoonIcon
+            width={30}
+            height={30}
+            className='text-gray-200 fill-current'
+            onClick={() => setTheme(isDark ? 'light' : 'dark')}
+          />
         </TabBar.Link>
       </TabBar>
     </>

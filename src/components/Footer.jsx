@@ -1,10 +1,10 @@
 export const Footer = ({ children }) => {
-  return <footer className='w-full h-auto mb-16 bg-gray-50 lg:mb-0'>{children}</footer>;
+  return <footer className='w-full h-auto mb-16 bg-gray-50 lg:mb-0 dark:bg-gray-800'>{children}</footer>;
 };
 
 const About = ({ children, title }) => (
   <div className="p-6 space-y-2">
-    <p className='text-lg'>{title}</p>
+    <p className='text-lg dark:text-gray-300'>{title}</p>
     <div className="space-y-2">{children}</div>
   </div>
 );

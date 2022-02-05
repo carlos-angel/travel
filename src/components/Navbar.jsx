@@ -2,7 +2,7 @@ import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from 'components/
 
 export const Navbar = ({ children }) => {
   return (
-    <nav className='fixed justify-between hidden w-full h-16 p-4 text-xl bg-white lg:flex lg:z-10'>
+    <nav className='fixed justify-between hidden w-full h-16 p-4 text-xl bg-white lg:flex lg:z-10 dark:bg-gray-800'>
       {children}
     </nav>
   );
