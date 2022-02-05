@@ -2,7 +2,7 @@ export const MoonIcon = ({ className, width, height }) => (
   <svg
     width={width ?? '20'}
     height={height ?? '20'}
-    viewBox='0 0 20 20'
+    viewBox='0 0 29 29'
     fill='none'
     xmlns='http://www.w3.org/2000/svg'
   >
