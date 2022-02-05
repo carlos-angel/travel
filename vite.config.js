@@ -10,6 +10,7 @@ export default defineConfig({
       components: resolve('src/components/'),
       screens: resolve('src/screens/'),
       assets: resolve('src/assets/'),
+      content: resolve('src/content/'),
     },
   },
 });

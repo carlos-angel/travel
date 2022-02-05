@@ -1,4 +1,4 @@
-import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from '../components/icons';
+import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from 'components/icons';
 
 export const Navbar = ({ children }) => {
   return (

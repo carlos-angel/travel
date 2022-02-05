@@ -1,11 +1,11 @@
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
-import { Footer } from '../components/Footer';
-import { FrequentQuestions } from '../components/FrequentQuestions';
-import { Navbar } from '../components/Navbar';
-import { TabBar } from '../components/TabBar';
-import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from '../components/icons';
-import travels from '../content/travels';
+import { Footer } from 'components/Footer';
+import { FrequentQuestions } from 'components/FrequentQuestions';
+import { Navbar } from 'components/Navbar';
+import { TabBar } from 'components/TabBar';
+import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from 'components/icons';
+import travels from 'content/travels';
 export const Home = () => {
   return (
     <>
