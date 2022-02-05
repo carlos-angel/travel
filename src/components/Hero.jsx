@@ -2,9 +2,9 @@ import sanFrancisco from 'assets/img/sanFrancisco.jpg';
 
 export const Hero = () => {
   return (
-    <div id='home'>
-      <div className='w-full h-3/4'>
-        <div className='absolute flex flex-col items-center w-full h-full py-4 space-y-96 lg:space-y-0 lg:items-start lg:pt-20 lg:justify-start'>
+    <div id='home' className='w-full h-full lg:h-128'>
+      <div className='w-full h-full'>
+        <div className='absolute flex flex-col items-center w-full h-full py-4 space-y-96 lg:space-y-0 lg:items-start lg:pt-48 lg:justify-start'>
           <input
             type='search'
             name='search'
@@ -18,7 +18,7 @@ export const Hero = () => {
             Explorar
           </button>
         </div>
-        <div className='w-full h-full lg:h-96 lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center'>
+        <div className='w-full h-full lg:bg-sanFranciscoDesktop lg:bg-cover lg:bg-center'>
           <img className='lg:hidden' src={sanFrancisco} alt='san francisco' />
         </div>
       </div>
