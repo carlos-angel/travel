@@ -3,7 +3,7 @@ export const TravelCard = ({ children, className }) => {
 };
 
 const HeaderImage = ({ className, backgroundImage = '' }) => (
-  <div className={`${className ?? 'bg-cover h-3/5 rounded-t-lg w-full'} ${backgroundImage}`} />
+  <div className={`${className ?? 'bg-cover bg-center h-3/5 rounded-t-lg w-full'} ${backgroundImage}`} />
 );
 
 const Body = ({ children, className }) => (
