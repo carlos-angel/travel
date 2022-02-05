@@ -2,7 +2,7 @@ import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from '../componen
 
 export const Navbar = ({ children }) => {
   return (
-    <nav className='fixed items-center justify-between hidden w-full p-4 bg-white h-14 lg:flex lg:z-10'>
+    <nav className='fixed justify-between hidden w-full h-16 p-4 text-xl bg-white lg:flex lg:z-10'>
       {children}
     </nav>
   );
@@ -13,7 +13,7 @@ const Logo = ({ className, children }) => (
 );
 
 const Links = ({ className, children }) => (
-  <div className={`${className ?? 'flex space-x-8'}`}>{children}</div>
+  <div className={`${className ?? 'flex space-x-10'}`}>{children}</div>
 );
 
 const BoxIcons = ({ className, children }) => (
