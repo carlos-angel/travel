@@ -37,7 +37,11 @@ export const Home = () => {
         </Navbar.BoxIcons>
       </Navbar>
       <section className='w-full h-full'>
-        <Hero />
+        <Hero>
+          <Hero.Search name='search' placeholder='San Francisco' />
+          <Hero.Paragraph content='¡Encuentra más ubicaciones como esta!'  />
+          <Hero.ButtonExplore title='Explorar' />
+        </Hero>
         <div id='recomendados' className='p-6'>
           <p className='text-3xl font-semibold text-primary'>Recomendados</p>
           <div className='flex items-center w-auto mt-6 space-x-4 overflow-x-auto overflow-y-hidden h-72 overscroll-x-contain'>
