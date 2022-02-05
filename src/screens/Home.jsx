@@ -8,7 +8,7 @@ import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from '../componen
 
 export const Home = () => {
   return (
-    <main className='flex flex-col w-full h-auto'>
+    <>
       <Navbar>
         <Navbar.Logo>
           <p className='text-xl font-black text-primary'>Travel</p>
@@ -36,13 +36,15 @@ export const Home = () => {
           <UserIcon width={25} height={25} className='text-gray-200 fill-current' />
         </Navbar.BoxIcons>
       </Navbar>
-      <section className='w-full h-full'>
+
+      <main className='flex flex-col w-full h-auto'>
         <Hero>
           <Hero.Search name='search' placeholder='San Francisco' />
-          <Hero.Paragraph content='¡Encuentra más ubicaciones como esta!'  />
+          <Hero.Paragraph content='¡Encuentra más ubicaciones como esta!' />
           <Hero.ButtonExplore title='Explorar' />
         </Hero>
-        <div id='recomendados' className='p-6'>
+
+        <section id='recomendados' className='p-6'>
           <p className='text-3xl font-semibold text-primary'>Recomendados</p>
           <div className='flex items-center w-auto mt-6 space-x-4 overflow-x-auto overflow-y-hidden h-72 overscroll-x-contain'>
             <TravelCard>
@@ -75,8 +77,9 @@ export const Home = () => {
               </TravelCard.Body>
             </TravelCard>
           </div>
-        </div>
-        <div id='rentas_destacadas' className='w-full h-auto px-6 pb-6 lg:px-6'>
+        </section>
+
+        <section id='rentas_destacadas' className='w-full h-auto px-6 pb-6 lg:px-6'>
           <p className='pb-6 mt-2 text-3xl font-semibold text-primary'>Rentas Destacadas</p>
           <div className='flex flex-col items-center justify-center w-full h-full'>
             <TravelCard className='w-full mb-8 bg-cover h-96 bg-chicago rounded-xl lg:bg-center'>
@@ -115,7 +118,8 @@ export const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </section>
+
         <FrequentQuestions>
           <FrequentQuestions.FQA
             title='Política de Cancelación'
@@ -141,36 +145,41 @@ export const Home = () => {
             un monto del 50% del valor de la renta'
           />
         </FrequentQuestions>
-      </section>
-      <Footer>
-        <Footer.About title='Acerca De'>
-          <Footer.About.Info className='text-sm text-gray-300' paragraph='Inversionistas' />
-          <Footer.About.Info className='text-sm text-gray-300' paragraph='Empleos' />
-          <Footer.About.Info className='text-sm text-gray-300' paragraph='Términos y condiciones' />
-          <Footer.About.Info className='text-sm text-gray-300' paragraph='Travel, Inc.' />
-        </Footer.About>
-      </Footer>
-      <TabBar>
-        <TabBar.Link href='#home'>
-          <HomeIcon width={30} height={30} className='text-gray-200 fill-current' />
-        </TabBar.Link>
 
-        <TabBar.Link href='#recomendados'>
-          <SearchIcon width={30} height={30} className='text-gray-200 fill-current' />
-        </TabBar.Link>
+        <Footer>
+          <Footer.About title='Acerca De'>
+            <Footer.About.Info className='text-sm text-gray-300' paragraph='Inversionistas' />
+            <Footer.About.Info className='text-sm text-gray-300' paragraph='Empleos' />
+            <Footer.About.Info
+              className='text-sm text-gray-300'
+              paragraph='Términos y condiciones'
+            />
+            <Footer.About.Info className='text-sm text-gray-300' paragraph='Travel, Inc.' />
+          </Footer.About>
+        </Footer>
 
-        <TabBar.Link href='#rentas_destacadas'>
-          <HeartIcon width={30} height={30} className='fill-current text-primary' />
-        </TabBar.Link>
+        <TabBar>
+          <TabBar.Link href='#home'>
+            <HomeIcon width={30} height={30} className='text-gray-200 fill-current' />
+          </TabBar.Link>
 
-        <TabBar.Link href='#'>
-          <UserIcon width={30} height={30} className='text-gray-200 fill-current' />
-        </TabBar.Link>
+          <TabBar.Link href='#recomendados'>
+            <SearchIcon width={30} height={30} className='text-gray-200 fill-current' />
+          </TabBar.Link>
 
-        <TabBar.Link href='#'>
-          <MoonIcon width={30} height={30} className='text-gray-200 fill-current' />
-        </TabBar.Link>
-      </TabBar>
-    </main>
+          <TabBar.Link href='#rentas_destacadas'>
+            <HeartIcon width={30} height={30} className='fill-current text-primary' />
+          </TabBar.Link>
+
+          <TabBar.Link href='#'>
+            <UserIcon width={30} height={30} className='text-gray-200 fill-current' />
+          </TabBar.Link>
+
+          <TabBar.Link href='#'>
+            <MoonIcon width={30} height={30} className='text-gray-200 fill-current' />
+          </TabBar.Link>
+        </TabBar>
+      </main>
+    </>
   );
 };
