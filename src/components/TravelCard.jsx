@@ -3,17 +3,17 @@ export const TravelCard = ({ children, className }) => {
 };
 
 const HeaderImage = ({ className, backgroundImage = '' }) => (
-  <div className={`${className ?? 'w-full h-3/5 rounded-t-lg bg-cover'} ${backgroundImage}`} />
+  <div className={`${className ?? 'bg-cover h-3/5 rounded-t-lg w-full'} ${backgroundImage}`} />
 );
 
 const Body = ({ children, className }) => (
-  <div className={`w-full h-2/5 px-4 ${className ?? 'rounded-b-lg bg-secondary text-white'}`}>
+  <div className={`h-2/5 px-4 w-full ${className ?? 'bg-secondary rounded-b-lg text-white'}`}>
     {children}
   </div>
 );
 
 const Title = ({ title, className }) => (
-  <p className={className ?? 'font-bold text-xl pt-2'}>{title}</p>
+  <p className={className ?? 'font-bold pt-2 text-xl'}>{title}</p>
 );
 
 const Description = ({ description, className }) => (

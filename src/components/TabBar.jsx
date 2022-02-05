@@ -2,7 +2,7 @@ export const TabBar = ({ children }) => {
   return (
     <div
       id='tab_bar'
-      className='w-full h-16 bg-gray-100 fixed left-0 bottom-0 shadow-md flex space-x-8 items-center justify-center lg:hidden'
+      className='fixed bottom-0 left-0 flex items-center justify-center w-full h-16 space-x-8 bg-gray-100 shadow-md lg:hidden'
     >
       {children}
     </div>

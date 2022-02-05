@@ -4,10 +4,10 @@
 
 @layer components {
   .card {
-    @apply w-48 h-64 shadow-md rounded-lg flex-none transform transition-all hover:-translate-y-4 hover:shadow-xl;
+    @apply flex-none w-48 h-64 transition-all transform rounded-lg shadow-md hover:-translate-y-4 hover:shadow-xl;
   }
 
   .cardTitle {
-    @apply text-3xl px-8 pt-8 pb-2 font-semibold text-white;
+    @apply px-8 pt-8 pb-2 text-3xl font-semibold text-white;
   }
 }
