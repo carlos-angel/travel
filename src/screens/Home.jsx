@@ -2,17 +2,45 @@ import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
 import { Footer } from '../components/Footer';
 import { FrequentQuestions } from '../components/FrequentQuestions';
+import { Navbar } from '../components/Navbar';
 import { TabBar } from '../components/TabBar';
+import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from '../components/icons';
 
 export const Home = () => {
   return (
-    <main className='h-screen'>
-      <nav></nav>
-      <section className='w-full pb-6'>
+    <main className='flex flex-col w-full h-auto'>
+      <Navbar>
+        <Navbar.Logo>
+          <p className='text-xl font-black text-primary'>Travel</p>
+        </Navbar.Logo>
+        <Navbar.Links>
+          <a className='text-sm font-bold text-primary hover:underline' href='#home'>
+            Inicio
+          </a>
+          <a className='text-sm font-bold text-primary hover:underline' href='#home'>
+            Recomendados
+          </a>
+          <a className='text-sm font-bold text-primary hover:underline' href='#home'>
+            Rentas
+          </a>
+          <a className='text-sm font-bold text-primary hover:underline' href='#home'>
+            FAQS
+          </a>
+          <a className='text-sm font-bold text-primary hover:underline' href='#home'>
+            Acerca De
+          </a>
+        </Navbar.Links>
+        <Navbar.BoxIcons>
+          <SearchIcon width={25} height={25} className='text-gray-200 fill-current' />
+          <MoonIcon width={25} height={25} className='text-gray-200 fill-current' />
+          <UserIcon width={25} height={25} className='text-gray-200 fill-current' />
+        </Navbar.BoxIcons>
+      </Navbar>
+      <section className='w-full h-full'>
         <Hero />
         <div id='recomendados' className='p-6'>
           <p className='text-3xl font-semibold text-primary'>Recomendados</p>
-          <div className=' w-auto h-72 items-center mt-6 overflow-x-auto overscroll-x-contain flex space-x-4 overflow-y-hidden'>
+          <div className='flex items-center w-auto mt-6 space-x-4 overflow-x-auto overflow-y-hidden h-72 overscroll-x-contain'>
             <TravelCard>
               <TravelCard.HeaderImage backgroundImage='bg-norway' />
               <TravelCard.Body>
@@ -26,7 +54,7 @@ export const Home = () => {
               <TravelCard.Body className='bg-white'>
                 <TravelCard.Title
                   title='New York'
-                  className='text-sky-400 font-bold text-xl pt-2'
+                  className='pt-2 text-xl font-bold text-sky-400'
                 />
                 <TravelCard.Description
                   description='Paisajes Increíbles'
@@ -44,40 +72,40 @@ export const Home = () => {
             </TravelCard>
           </div>
         </div>
-        <div id='rentas_destacadas' className='px-6 w-full h-auto pb-6 lg:px-6'>
-          <p className='text-3xl text-primary font-semibold pb-6 mt-2'>Rentas Destacadas</p>
-          <div className='w-full h-full flex flex-col items-center justify-center'>
-            <TravelCard className='w-full h-96 bg-chicago bg-cover rounded-xl mb-8 lg:bg-center'>
+        <div id='rentas_destacadas' className='w-full h-auto px-6 pb-6 lg:px-6'>
+          <p className='pb-6 mt-2 text-3xl font-semibold text-primary'>Rentas Destacadas</p>
+          <div className='flex flex-col items-center justify-center w-full h-full'>
+            <TravelCard className='w-full mb-8 bg-cover h-96 bg-chicago rounded-xl lg:bg-center'>
               <TravelCard.Title title='Chicago' className='cardTitle lg:text-gray-700' />
               <TravelCard.Description
                 description='2 habitaciones, 1 baño y cocina.'
-                className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold lg:text-gray-700'
+                className='pl-8 mr-24 text-sm font-extrabold text-white lg:text-lg lg:font-semibold lg:text-gray-700'
               />
             </TravelCard>
 
             <div className='lg:flex lg:h-full lg:w-full lg:space-x-4'>
-              <TravelCard className='w-full h-96 bg-LA bg-cover rounded-xl mb-8 lg:h-auto'>
+              <TravelCard className='w-full mb-8 bg-cover h-96 bg-LA rounded-xl lg:h-auto'>
                 <TravelCard.Title title='Los Angeles' className='cardTitle' />
                 <TravelCard.Description
                   description='2 habitaciones, 1 baño y cocina.'
-                  className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold'
+                  className='pl-8 mr-24 text-sm font-extrabold text-white lg:text-lg lg:font-semibold'
                 />
               </TravelCard>
 
-              <div className='h-full w-full'>
-                <TravelCard className='w-full h-96 bg-miami bg-cover rounded-xl mb-8'>
+              <div className='w-full h-full'>
+                <TravelCard className='w-full mb-8 bg-cover h-96 bg-miami rounded-xl'>
                   <TravelCard.Title title='Miami' className='cardTitle' />
                   <TravelCard.Description
                     description='2 habitaciones, 1 baño y cocina.'
-                    className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold'
+                    className='pl-8 mr-24 text-sm font-extrabold text-white lg:text-lg lg:font-semibold'
                   />
                 </TravelCard>
 
-                <TravelCard className='w-full h-96 bg-bali bg-cover rounded-xl mb-8'>
+                <TravelCard className='w-full mb-8 bg-cover h-96 bg-bali rounded-xl'>
                   <TravelCard.Title title='Bali' className='cardTitle' />
                   <TravelCard.Description
                     description='2 habitaciones, 1 baño y cocina.'
-                    className='text-sm pl-8 text-white font-extrabold mr-24 lg:text-lg lg:font-semibold'
+                    className='pl-8 mr-24 text-sm font-extrabold text-white lg:text-lg lg:font-semibold'
                   />
                 </TravelCard>
               </div>
@@ -120,23 +148,23 @@ export const Home = () => {
       </Footer>
       <TabBar>
         <TabBar.Link href='#home'>
-          <TabBar.HomeIcon width={30} height={30} className='fill-current text-gray-200' />
+          <HomeIcon width={30} height={30} className='text-gray-200 fill-current' />
         </TabBar.Link>
 
         <TabBar.Link href='#recomendados'>
-          <TabBar.SearchIcon width={30} height={30} className='fill-current text-gray-200' />
+          <SearchIcon width={30} height={30} className='text-gray-200 fill-current' />
         </TabBar.Link>
 
         <TabBar.Link href='#rentas_destacadas'>
-          <TabBar.HeartIcon width={30} height={30} className='fill-current text-primary' />
+          <HeartIcon width={30} height={30} className='fill-current text-primary' />
         </TabBar.Link>
 
         <TabBar.Link href='#'>
-          <TabBar.UserIcon width={30} height={30} className='fill-current text-gray-200' />
+          <UserIcon width={30} height={30} className='text-gray-200 fill-current' />
         </TabBar.Link>
 
         <TabBar.Link href='#'>
-          <TabBar.MoonIcon width={30} height={30} className='fill-current text-gray-200' />
+          <MoonIcon width={30} height={30} className='text-gray-200 fill-current' />
         </TabBar.Link>
       </TabBar>
     </main>

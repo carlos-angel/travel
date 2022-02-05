@@ -2,6 +2,7 @@ module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      height: { 128: '38rem' },
       backgroundImage: {
         sanFrancisco: "url('./src/assets/img/sanFrancisco.jpg')",
         sanFranciscoDesktop: "url('./src/assets/img/sanFranciscoDesktop.jpg')",
