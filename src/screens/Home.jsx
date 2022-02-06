@@ -46,20 +46,22 @@ export const Home = () => {
           <SearchIcon
             width={22}
             height={22}
-            className='fill-current text-primary dark:text-gray-300'
+            className='cursor-pointer fill-current text-primary dark:text-gray-300'
           />
 
           <MoonIcon
             onClick={() => setTheme(isDark ? 'light' : 'dark')}
             width={22}
             height={22}
-            className='cursor-pointer fill-current text-primary dark:text-gray-300'
+            className={`cursor-pointer fill-current ${
+              isDark ? 'text-yellow-400' : 'text-gray-200'
+            }`}
           />
 
           <UserIcon
             width={22}
             height={22}
-            className='text-gray-200 fill-current dark:text-gray-300'
+            className='text-gray-200 cursor-pointer fill-current dark:text-gray-300'
           />
         </Navbar.BoxIcons>
       </Navbar>
@@ -204,7 +206,7 @@ export const Home = () => {
         <MoonIcon
           width={30}
           height={30}
-          className='text-gray-200 cursor-pointer fill-current'
+          className={`cursor-pointer fill-current ${isDark ? 'text-yellow-400' : 'text-gray-200'}`}
           onClick={() => setTheme(isDark ? 'light' : 'dark')}
         />
       </TabBar>
