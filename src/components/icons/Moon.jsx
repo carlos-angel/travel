@@ -1,6 +1,5 @@
-export const MoonIcon = ({ className, width, height, onClick }) => (
+export const MoonIcon = ({ className, width, height }) => (
   <svg
-    onClick={onClick}
     width={width ?? '20'}
     height={height ?? '20'}
     viewBox='0 0 29 29'

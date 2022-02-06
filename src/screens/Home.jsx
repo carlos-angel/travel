@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
 import { Footer } from 'components/Footer';
@@ -11,6 +11,7 @@ import { ThemeContext } from 'context/ThemeContext';
 
 export const Home = () => {
   const { theme, setTheme } = useContext(ThemeContext);
+  const [showPage, setShowPage] = useState('home');
   const isDark = theme === 'dark';
 
   return (
@@ -43,26 +44,31 @@ export const Home = () => {
           </a>
         </Navbar.Links>
         <Navbar.BoxIcons>
-          <SearchIcon
-            width={22}
-            height={22}
-            className='cursor-pointer fill-current text-primary dark:text-gray-300'
-          />
+          <a href='#recommended' onClick={() => setShowPage('recommended')}>
+            <SearchIcon
+              width={22}
+              height={22}
+              className={`fill-current ${
+                showPage === 'recommended' ? 'text-primary' : 'text-gray-300'
+              }`}
+            />
+          </a>
 
-          <MoonIcon
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
-            width={22}
-            height={22}
-            className={`cursor-pointer fill-current ${
-              isDark ? 'text-yellow-400' : 'text-gray-200'
-            }`}
-          />
+          <a href='#' onClick={() => setTheme(isDark ? 'light' : 'dark')}>
+            <MoonIcon
+              width={22}
+              height={22}
+              className={`fill-current ${isDark ? 'text-yellow-400' : 'text-gray-200'}`}
+            />
+          </a>
 
-          <UserIcon
-            width={22}
-            height={22}
-            className='text-gray-200 cursor-pointer fill-current dark:text-gray-300'
-          />
+          <a href='#home' onClick={() => setShowPage('user')}>
+            <UserIcon
+              width={22}
+              height={22}
+              className={`fill-current ${showPage === 'user' ? 'text-primary' : 'text-gray-300'}`}
+            />
+          </a>
         </Navbar.BoxIcons>
       </Navbar>
       <Hero>
@@ -187,20 +193,40 @@ export const Home = () => {
       </div>
 
       <TabBar>
-        <TabBar.Link href='#home'>
-          <HomeIcon width={30} height={30} className='text-gray-200 fill-current' />
+        <TabBar.Link href='#home' onClick={() => setShowPage('home')}>
+          <HomeIcon
+            width={30}
+            height={30}
+            className={`fill-current ${showPage === 'home' ? 'text-primary' : 'text-gray-300'}`}
+          />
         </TabBar.Link>
 
-        <TabBar.Link href='#recommended'>
-          <SearchIcon width={30} height={30} className='text-gray-200 fill-current' />
+        <TabBar.Link href='#recommended' onClick={() => setShowPage('recommended')}>
+          <SearchIcon
+            width={30}
+            height={30}
+            className={`fill-current ${
+              showPage === 'recommended' ? 'text-primary' : 'text-gray-300'
+            }`}
+          />
         </TabBar.Link>
 
-        <TabBar.Link href='#trendingStays'>
-          <HeartIcon width={30} height={30} className='fill-current text-primary' />
+        <TabBar.Link href='#trendingStays' onClick={() => setShowPage('trendingStays')}>
+          <HeartIcon
+            width={30}
+            height={30}
+            className={`fill-current ${
+              showPage === 'trendingStays' ? 'text-primary' : 'text-gray-300'
+            }`}
+          />
         </TabBar.Link>
 
-        <TabBar.Link href='#'>
-          <UserIcon width={30} height={30} className='text-gray-200 fill-current' />
+        <TabBar.Link href='#' onClick={() => setShowPage('user')}>
+          <UserIcon
+            width={30}
+            height={30}
+            className={`fill-current ${showPage === 'user' ? 'text-primary' : 'text-gray-300'}`}
+          />
         </TabBar.Link>
 
         <MoonIcon

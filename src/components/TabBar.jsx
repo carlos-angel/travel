@@ -9,6 +9,6 @@ export const TabBar = ({ children }) => {
   );
 };
 
-const Link = ({ href, children }) => <a href={href}>{children}</a>;
+const Link = ({ href, children, onClick }) => <a href={href} onClick={onClick}>{children}</a>;
 
 TabBar.Link = Link;
