@@ -23,16 +23,22 @@ export const Home = () => {
           <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
             Inicio
           </a>
-          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
+          <a
+            className='font-bold text-primary hover:underline dark:text-gray-300'
+            href='#recommended'
+          >
             Recomendados
           </a>
-          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
-            Rentas
+          <a
+            className='font-bold text-primary hover:underline dark:text-gray-300'
+            href='#trendingStays'
+          >
+            Rentas Destacadas
           </a>
-          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
+          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#faqs'>
             FAQS
           </a>
-          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
+          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#about'>
             Acerca De
           </a>
         </Navbar.Links>
@@ -64,7 +70,7 @@ export const Home = () => {
       </Hero>
 
       <div className='w-full h-auto'>
-        <section id='recomendados' className='w-full h-auto'>
+        <section id='recommended' className='w-full h-auto'>
           <p className='pt-6 pl-6 text-3xl font-semibold text-primary dark:text-gray-300'>
             Recomendados
           </p>
@@ -96,7 +102,7 @@ export const Home = () => {
           </div>
         </section>
 
-        <section id='rentas_destacadas' className='h-full px-6 lg:px-14'>
+        <section id='trendingStays' className='h-full px-6 lg:px-14'>
           <p className='pb-6 text-3xl font-semibold text-primary dark:text-gray-300'>
             Rentas Destacadas
           </p>
@@ -183,11 +189,11 @@ export const Home = () => {
           <HomeIcon width={30} height={30} className='text-gray-200 fill-current' />
         </TabBar.Link>
 
-        <TabBar.Link href='#recomendados'>
+        <TabBar.Link href='#recommended'>
           <SearchIcon width={30} height={30} className='text-gray-200 fill-current' />
         </TabBar.Link>
 
-        <TabBar.Link href='#rentas_destacadas'>
+        <TabBar.Link href='#trendingStays'>
           <HeartIcon width={30} height={30} className='fill-current text-primary' />
         </TabBar.Link>
 
@@ -195,14 +201,12 @@ export const Home = () => {
           <UserIcon width={30} height={30} className='text-gray-200 fill-current' />
         </TabBar.Link>
 
-        <TabBar.Link href='#'>
-          <MoonIcon
-            width={30}
-            height={30}
-            className='text-gray-200 fill-current'
-            onClick={() => setTheme(isDark ? 'light' : 'dark')}
-          />
-        </TabBar.Link>
+        <MoonIcon
+          width={30}
+          height={30}
+          className='text-gray-200 cursor-pointer fill-current'
+          onClick={() => setTheme(isDark ? 'light' : 'dark')}
+        />
       </TabBar>
     </>
   );
