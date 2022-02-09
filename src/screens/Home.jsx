@@ -1,5 +1,5 @@
-import { useContext, useState } from 'react';
-import { FaUser, FaRegMoon, FaRegSun, FaHome, FaHeart, FaSearch, FaMoon } from 'react-icons/fa';
+import { useState } from 'react';
+import { FaUser, FaRegMoon, FaHome, FaHeart, FaSearch } from 'react-icons/fa';
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
 import { Footer } from 'components/Footer';
@@ -7,12 +7,10 @@ import { FrequentQuestions } from 'components/FrequentQuestions';
 import { Navbar } from 'components/Navbar';
 import { TabBar } from 'components/TabBar';
 import travels from 'content/travels';
-import { ThemeContext } from 'context/ThemeContext';
+import { DarkMode } from 'components/DarkMode';
 
 export const Home = () => {
-  const { theme, setTheme } = useContext(ThemeContext);
   const [showPage, setShowPage] = useState('home');
-  const isDark = theme === 'dark';
 
   return (
     <>
@@ -54,13 +52,7 @@ export const Home = () => {
             />
           </a>
 
-          <a href='#' onClick={() => setTheme(isDark ? 'light' : 'dark')}>
-            <FaRegMoon
-              width={22}
-              height={22}
-              className={`fill-current ${isDark ? 'text-yellow-400' : 'text-gray-200'}`}
-            />
-          </a>
+          <DarkMode width={22} height={22} />
 
           <a href='#home' onClick={() => setShowPage('user')}>
             <FaUser
@@ -229,13 +221,7 @@ export const Home = () => {
           />
         </TabBar.Link>
 
-        
-        <FaRegMoon
-          width={30}
-          height={30}
-          className={`cursor-pointer fill-current ${isDark ? 'text-yellow-400' : 'text-gray-200'}`}
-          onClick={() => setTheme(isDark ? 'light' : 'dark')}
-        />
+        <DarkMode width={22} height={22} />
       </TabBar>
     </>
   );
