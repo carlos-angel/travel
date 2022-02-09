@@ -15,34 +15,18 @@ export const Home = () => {
   return (
     <>
       <Navbar>
-        <Navbar.Logo>
+        <Navbar.Section>
           <p className='font-black text-primary dark:text-gray-300'>Travel</p>
-        </Navbar.Logo>
-        <Navbar.Links>
-          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#home'>
-            Inicio
-          </a>
-          <a
-            className='font-bold text-primary hover:underline dark:text-gray-300'
-            href='#recommended'
-          >
-            Recomendados
-          </a>
-          <a
-            className='font-bold text-primary hover:underline dark:text-gray-300'
-            href='#trendingStays'
-          >
-            Rentas Destacadas
-          </a>
-          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#faqs'>
-            FAQS
-          </a>
-          <a className='font-bold text-primary hover:underline dark:text-gray-300' href='#about'>
-            Acerca De
-          </a>
-        </Navbar.Links>
-        <Navbar.BoxIcons>
-          <a href='#recommended' onClick={() => setShowPage('recommended')}>
+        </Navbar.Section>
+        <Navbar.Section className='flex space-x-10'>
+          <Navbar.Link href='#home'>Inicio</Navbar.Link>
+          <Navbar.Link href='#recommended'>Recomendados</Navbar.Link>
+          <Navbar.Link href='#trendingStays'>Rentas Destacadas</Navbar.Link>
+          <Navbar.Link href='#about'>Sobre Mi</Navbar.Link>
+          <Navbar.Link href='#faqs'>FAQs</Navbar.Link>
+        </Navbar.Section>
+        <Navbar.Section>
+          <Navbar.Link href='#recommended' onClick={() => setShowPage('recommended')}>
             <FaSearch
               width={22}
               height={22}
@@ -50,18 +34,18 @@ export const Home = () => {
                 showPage === 'recommended' ? 'text-primary' : 'text-gray-300'
               }`}
             />
-          </a>
+          </Navbar.Link>
 
-          <DarkMode width={22} height={22} />
-
-          <a href='#home' onClick={() => setShowPage('user')}>
+          <Navbar.Link href='#home' onClick={() => setShowPage('user')}>
             <FaUser
               width={22}
               height={22}
               className={`fill-current ${showPage === 'user' ? 'text-primary' : 'text-gray-300'}`}
             />
-          </a>
-        </Navbar.BoxIcons>
+          </Navbar.Link>
+
+          <DarkMode width={22} height={22} />
+        </Navbar.Section>
       </Navbar>
       <Hero>
         <Hero.Search name='search' placeholder='San Francisco' />

@@ -6,18 +6,15 @@ export const Navbar = ({ children }) => {
   );
 };
 
-const Logo = ({ className, children }) => (
-  <div className={`${className ?? 'w-auto h-auto'}`}>{children}</div>
-);
-
-const Links = ({ className, children }) => (
-  <div className={`${className ?? 'flex space-x-10'}`}>{children}</div>
-);
-
-const BoxIcons = ({ className, children }) => (
+const Section = ({ children, className }) => (
   <div className={`${className ?? 'flex space-x-4'}`}>{children}</div>
 );
 
-Navbar.Logo = Logo;
-Navbar.Links = Links;
-Navbar.BoxIcons = BoxIcons;
+const Link = ({ children, href, onClick }) => (
+  <a className='font-bold text-primary dark:text-gray-300' href={href} onClick={onClick}>
+    {children}
+  </a>
+);
+
+Navbar.Section = Section;
+Navbar.Link = Link;
