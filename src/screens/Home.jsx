@@ -1,11 +1,11 @@
 import { useContext, useState } from 'react';
+import { FaUser, FaRegMoon, FaRegSun, FaHome, FaHeart, FaSearch, FaMoon } from 'react-icons/fa';
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
 import { Footer } from 'components/Footer';
 import { FrequentQuestions } from 'components/FrequentQuestions';
 import { Navbar } from 'components/Navbar';
 import { TabBar } from 'components/TabBar';
-import { HomeIcon, MoonIcon, SearchIcon, HeartIcon, UserIcon } from 'components/icons';
 import travels from 'content/travels';
 import { ThemeContext } from 'context/ThemeContext';
 
@@ -45,7 +45,7 @@ export const Home = () => {
         </Navbar.Links>
         <Navbar.BoxIcons>
           <a href='#recommended' onClick={() => setShowPage('recommended')}>
-            <SearchIcon
+            <FaSearch
               width={22}
               height={22}
               className={`fill-current ${
@@ -55,7 +55,7 @@ export const Home = () => {
           </a>
 
           <a href='#' onClick={() => setTheme(isDark ? 'light' : 'dark')}>
-            <MoonIcon
+            <FaRegMoon
               width={22}
               height={22}
               className={`fill-current ${isDark ? 'text-yellow-400' : 'text-gray-200'}`}
@@ -63,7 +63,7 @@ export const Home = () => {
           </a>
 
           <a href='#home' onClick={() => setShowPage('user')}>
-            <UserIcon
+            <FaUser
               width={22}
               height={22}
               className={`fill-current ${showPage === 'user' ? 'text-primary' : 'text-gray-300'}`}
@@ -194,7 +194,7 @@ export const Home = () => {
 
       <TabBar>
         <TabBar.Link href='#home' onClick={() => setShowPage('home')}>
-          <HomeIcon
+          <FaHome
             width={30}
             height={30}
             className={`fill-current ${showPage === 'home' ? 'text-primary' : 'text-gray-300'}`}
@@ -202,7 +202,7 @@ export const Home = () => {
         </TabBar.Link>
 
         <TabBar.Link href='#recommended' onClick={() => setShowPage('recommended')}>
-          <SearchIcon
+          <FaSearch
             width={30}
             height={30}
             className={`fill-current ${
@@ -212,7 +212,7 @@ export const Home = () => {
         </TabBar.Link>
 
         <TabBar.Link href='#trendingStays' onClick={() => setShowPage('trendingStays')}>
-          <HeartIcon
+          <FaHeart
             width={30}
             height={30}
             className={`fill-current ${
@@ -222,14 +222,15 @@ export const Home = () => {
         </TabBar.Link>
 
         <TabBar.Link href='#' onClick={() => setShowPage('user')}>
-          <UserIcon
+          <FaUser
             width={30}
             height={30}
             className={`fill-current ${showPage === 'user' ? 'text-primary' : 'text-gray-300'}`}
           />
         </TabBar.Link>
 
-        <MoonIcon
+        
+        <FaRegMoon
           width={30}
           height={30}
           className={`cursor-pointer fill-current ${isDark ? 'text-yellow-400' : 'text-gray-200'}`}
