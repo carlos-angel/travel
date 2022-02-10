@@ -8,7 +8,8 @@ import { Navbar } from 'components/Navbar';
 import { TabBar } from 'components/TabBar';
 import travels from 'content/travels';
 import { DarkMode } from 'components/DarkMode';
-import TrendingStays from '../components/TrendingStays';
+import TrendingStays from 'components/TrendingStays';
+import { Recommended } from 'components/Recommended';
 
 export const Home = () => {
   const [showPage, setShowPage] = useState('home');
@@ -55,24 +56,19 @@ export const Home = () => {
       </Hero>
 
       <div className='w-full h-auto'>
-        <section id='recommended' className='w-full h-auto'>
-          <p className='pt-6 pl-6 text-3xl font-semibold text-primary dark:text-gray-300'>
-            Recomendados
-          </p>
-          <div className='flex items-center w-auto px-6 mt-6 space-x-4 overflow-x-auto h-96 overscroll-x-contain lg:space-x-6 scrollbar'>
-            {travels.map(({ title, description, bg }, index) => {
-              return (
-                <TravelCard key={index}>
-                  <TravelCard.HeaderImage backgroundImage={bg} />
-                  <TravelCard.Body>
-                    <TravelCard.Title title={title} />
-                    <TravelCard.Description description={description} />
-                  </TravelCard.Body>
-                </TravelCard>
-              );
-            })}
-          </div>
-        </section>
+        <Recommended id='recommended' title='Recomendados'>
+          {travels.map(({ title, description, bg }, index) => {
+            return (
+              <TravelCard key={index}>
+                <TravelCard.HeaderImage backgroundImage={bg} />
+                <TravelCard.Body>
+                  <TravelCard.Title title={title} />
+                  <TravelCard.Description description={description} />
+                </TravelCard.Body>
+              </TravelCard>
+            );
+          })}
+        </Recommended>
 
         <TrendingStays id='trendingStays' title='Rentas destacadas'>
           <TrendingStays.Top>
