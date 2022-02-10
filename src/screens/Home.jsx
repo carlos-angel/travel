@@ -8,6 +8,7 @@ import { Navbar } from 'components/Navbar';
 import { TabBar } from 'components/TabBar';
 import travels from 'content/travels';
 import { DarkMode } from 'components/DarkMode';
+import TrendingStays from '../components/TrendingStays';
 
 export const Home = () => {
   const [showPage, setShowPage] = useState('home');
@@ -86,48 +87,37 @@ export const Home = () => {
           </div>
         </section>
 
-        <section id='trendingStays' className='h-full px-6 lg:px-14'>
-          <p className='pb-6 text-3xl font-semibold text-primary dark:text-gray-300'>
-            Rentas Destacadas
-          </p>
-          <div className='flex flex-col items-center justify-center w-full h-full'>
-            <TravelCard className='w-full mb-8 bg-cover h-96 bg-chicago rounded-2xl lg:flex-none lg:bg-center'>
-              <TravelCard.Title title='Chicago' className='cardTitle lg:text-gray-700' />
-              <TravelCard.Description
+        <TrendingStays id='trendingStays' title='Rentas destacadas'>
+          <TrendingStays.Top>
+            <TrendingStays.Card className='w-full h-full bg-cover rounded-2xl lg:bg-center bg-chicago'>
+              <TrendingStays.Card.Title title='Chicago' className='cardTitle lg:text-gray-700' />
+              <TrendingStays.Card.Description
                 description='2 habitaciones, 1 baño y cocina.'
-                className='pl-8 mr-24 text-base font-extrabold text-white lg:text-lg lg:font-semibold lg:text-gray-700'
+                className='pl-8 mr-24 text-base font-extrabold text-white lg:text-xl lg:text-gray-700'
               />
-            </TravelCard>
+            </TrendingStays.Card>
+          </TrendingStays.Top>
 
-            <div className='lg:flex lg:h-1/3 lg:w-full lg:flex-none'>
-              <TravelCard className='w-full mb-8 bg-cover h-96 bg-LA rounded-2xl lg:w-3/5 lg:h-auto'>
-                <TravelCard.Title title='Los Angeles' className='cardTitle' />
-                <TravelCard.Description
-                  description='2 habitaciones, 1 baño y cocina.'
-                  className='pl-8 mr-24 text-base font-extrabold text-white lg:text-lg lg:font-semibold'
-                />
-              </TravelCard>
+          <TrendingStays.Bottom>
+            <TrendingStays.BottomLeft>
+              <TrendingStays.Card className='w-full bg-cover  h-96 bg-LA rounded-2xl lg:w-full lg:h-full'>
+                <TrendingStays.Card.Title title='Chicago' />
+                <TrendingStays.Card.Description description='2 habitaciones, 1 baño y cocina.' />
+              </TrendingStays.Card>
+            </TrendingStays.BottomLeft>
 
-              <div className='lg:flex lg:flex-col lg:w-full lg:pl-8'>
-                <TravelCard className='w-full mb-8 bg-cover h-96 bg-miami rounded-xl'>
-                  <TravelCard.Title title='Miami' className='cardTitle' />
-                  <TravelCard.Description
-                    description='2 habitaciones, 1 baño y cocina.'
-                    className='pl-8 mr-24 text-sm font-extrabold text-white lg:text-lg lg:font-semibold'
-                  />
-                </TravelCard>
-
-                <TravelCard className='w-full mb-8 bg-cover h-96 bg-bali rounded-xl'>
-                  <TravelCard.Title title='Bali' className='cardTitle' />
-                  <TravelCard.Description
-                    description='2 habitaciones, 1 baño y cocina.'
-                    className='pl-8 mr-24 text-sm font-extrabold text-white lg:text-lg lg:font-semibold'
-                  />
-                </TravelCard>
-              </div>
-            </div>
-          </div>
-        </section>
+            <TrendingStays.BottomRight>
+              <TrendingStays.Card className='w-full mb-8 bg-cover h-96 bg-miami rounded-xl'>
+                <TrendingStays.Card.Title title='Chicago' />
+                <TrendingStays.Card.Description description='2 habitaciones, 1 baño y cocina.' />
+              </TrendingStays.Card>
+              <TrendingStays.Card className='w-full mb-8 bg-cover h-96 bg-bali rounded-xl'>
+                <TrendingStays.Card.Title title='Chicago' />
+                <TrendingStays.Card.Description description='2 habitaciones, 1 baño y cocina.' />
+              </TrendingStays.Card>
+            </TrendingStays.BottomRight>
+          </TrendingStays.Bottom>
+        </TrendingStays>
 
         <FrequentQuestions>
           <FrequentQuestions.FQA
