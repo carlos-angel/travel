@@ -11,7 +11,7 @@ const Section = ({ children, className }) => (
 );
 
 const Link = ({ children, href, onClick }) => (
-  <a className='font-bold text-primary dark:text-gray-300' href={href} onClick={onClick}>
+  <a className='font-bold text-primary dark:text-gray-300 dark:hover:text-primary' href={href} onClick={onClick}>
     {children}
   </a>
 );
