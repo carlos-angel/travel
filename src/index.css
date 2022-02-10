@@ -10,4 +10,12 @@
   .cardTitle {
     @apply px-8 pt-8 pb-2 text-3xl font-semibold text-white;
   }
+
+  .cardBody {
+    @apply w-full px-4 text-white rounded-b-lg h-2/5 bg-secondary dark:text-gray-300 dark:bg-gray-700;
+  }
+
+  .card:nth-child(even) .cardBody {
+    @apply bg-white text-sky-400 dark:text-gray-300 dark:bg-gray-800;
+  }
 }

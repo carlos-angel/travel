@@ -7,7 +7,7 @@ const HeaderImage = ({ className, backgroundImage = '' }) => (
 );
 
 const Body = ({ children, className }) => (
-  <div className={`h-2/5 px-4 w-full ${className ?? 'bg-secondary rounded-b-lg text-white dark:bg-gray-700'}`}>
+  <div className={`${className ?? 'cardBody'}`}>
     {children}
   </div>
 );

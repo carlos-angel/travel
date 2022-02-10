@@ -61,25 +61,12 @@ export const Home = () => {
           </p>
           <div className='flex items-center w-auto px-6 mt-6 space-x-4 overflow-x-auto h-96 overscroll-x-contain lg:space-x-6 scrollbar'>
             {travels.map(({ title, description, bg }, index) => {
-              const isCardImpar = (index + 1) % 2 === 0;
               return (
                 <TravelCard key={index}>
                   <TravelCard.HeaderImage backgroundImage={bg} />
-                  <TravelCard.Body
-                    className={isCardImpar ? 'bg-white dark:bg-gray-800 rounded-b-lg' : null}
-                  >
-                    <TravelCard.Title
-                      title={title}
-                      className={
-                        isCardImpar
-                          ? 'pt-2 text-xl font-bold text-sky-400 dark:text-gray-300'
-                          : null
-                      }
-                    />
-                    <TravelCard.Description
-                      description={description}
-                      className={isCardImpar ? 'text-sm text-sky-400 dark:text-gray-300' : null}
-                    />
+                  <TravelCard.Body>
+                    <TravelCard.Title title={title} />
+                    <TravelCard.Description description={description} />
                   </TravelCard.Body>
                 </TravelCard>
               );
@@ -100,7 +87,7 @@ export const Home = () => {
 
           <TrendingStays.Bottom>
             <TrendingStays.BottomLeft>
-              <TrendingStays.Card className='w-full bg-cover  h-96 bg-LA rounded-2xl lg:w-full lg:h-full'>
+              <TrendingStays.Card className='w-full bg-cover h-96 bg-LA rounded-2xl lg:w-full lg:h-full'>
                 <TrendingStays.Card.Title title='Chicago' />
                 <TrendingStays.Card.Description description='2 habitaciones, 1 baño y cocina.' />
               </TrendingStays.Card>
