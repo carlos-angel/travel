@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { FaUser, FaRegMoon, FaHome, FaHeart, FaSearch } from 'react-icons/fa';
+import { FaUser, FaHome, FaHeart, FaSearch } from 'react-icons/fa';
 import { Hero } from 'components/Hero';
 import { TravelCard } from 'components/TravelCard';
 import { Footer } from 'components/Footer';
