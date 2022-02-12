@@ -1,9 +1,9 @@
 module.exports = {
-  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
-  darkMode: 'class',
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
-      height: { 128: '38rem' },
+      height: { 128: "38rem" },
       backgroundImage: {
         sanFrancisco: "url('./src/assets/img/sanFrancisco.jpg')",
         sanFranciscoDesktop: "url('./src/assets/img/sanFranciscoDesktop.jpg')",
@@ -21,20 +21,20 @@ module.exports = {
         iceland: "url('./src/assets/img/iceland.jpg')",
       },
       backgroundColor: (theme) => ({
-        ...theme('colors'),
-        primary: '#CC2D4A',
-        secondary: '#8FA206',
-        tertiary: '#61AEC9',
+        ...theme("colors"),
+        primary: "#CC2D4A",
+        secondary: "#8FA206",
+        tertiary: "#61AEC9",
       }),
       textColor: {
-        primary: '#CC2D4A',
-        secondary: '#8FA206',
-        tertiary: '#61AEC9',
+        primary: "#CC2D4A",
+        secondary: "#8FA206",
+        tertiary: "#61AEC9",
       },
       fontFamily: {
-        Montserrat: ['Montserrat', 'sans-serif'],
+        Montserrat: ["Montserrat", "sans-serif"],
       },
     },
   },
   plugins: [],
-};
+}
