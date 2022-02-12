@@ -4,7 +4,10 @@
   "scripts": {
     "dev": "vite",
     "build": "NODE_ENV=production vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint . --fix --ext .js,.jsx",
+    "prettier": "prettier . --write",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -15,8 +18,23 @@
     "@vitejs/plugin-react": "^1.0.7",
     "autoprefixer": "^10.4.2",
     "cssnano": "^5.0.16",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.2.0",
+    "eslint-plugin-react": "^7.28.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.3.3",
     "postcss": "^8.4.5",
+    "prettier": "^2.5.1",
+    "prop-types": "^15.8.1",
     "tailwindcss": "^3.0.18",
     "vite": "^2.7.2"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
   }
 }
